@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CB_importData
 {
-    public class ApplicationContext : DbContext
+    public class UsersRepository : DbContext
     {
         public DbSet<User> Users { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

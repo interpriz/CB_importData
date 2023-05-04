@@ -15,10 +15,12 @@ namespace CB_importData.ViewModels
 {
     public class SQLiteUserViewModel
     {
-        ApplicationContext db = new ApplicationContext();
+        UsersRepository db = new UsersRepository();
         RelayCommand? addCommand;
         RelayCommand? editCommand;
         RelayCommand? deleteCommand;
+        RelayCommand? openCommand;
+        RelayCommand? saveCommand;
 
         IFileService<User> fileService;
         IDialogService dialogService;
@@ -35,7 +37,6 @@ namespace CB_importData.ViewModels
         }
 
         // команда сохранения файла
-        private RelayCommand saveCommand;
         public RelayCommand SaveCommand
         {
             get
@@ -60,7 +61,6 @@ namespace CB_importData.ViewModels
         }
 
         // команда открытия файла
-        private RelayCommand openCommand;
         public RelayCommand OpenCommand
         {
             get

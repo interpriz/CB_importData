@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:cbr-ru:ed:v2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ED807">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="BICDirectoryEntry">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ParticipantInfo">
+                <xs:complexType mixed="true">
+                  <xs:sequence minOccurs="0">
+                    <xs:element name="RstrList">
+                      <xs:complexType>
+                        <xs:attribute name="Rstr" type="xs:string" use="required" />
+                        <xs:attribute name="RstrDate" type="xs:date" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="NameP" type="xs:string" use="required" />
+                  <xs:attribute name="CntrCd" type="xs:string" use="optional" />
+                  <xs:attribute name="Rgn" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Ind" type="xs:unsignedInt" use="optional" />
+                  <xs:attribute name="Tnp" type="xs:string" use="optional" />
+                  <xs:attribute name="Nnp" type="xs:string" use="optional" />
+                  <xs:attribute name="Adr" type="xs:string" use="optional" />
+                  <xs:attribute name="DateIn" type="xs:date" use="required" />
+                  <xs:attribute name="PtType" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Srvcs" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="XchType" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="UID" type="xs:unsignedLong" use="required" />
+                  <xs:attribute name="ParticipantStatus" type="xs:string" use="required" />
+                  <xs:attribute name="PrntBIC" type="xs:unsignedInt" use="optional" />
+                  <xs:attribute name="RegN" type="xs:string" use="optional" />
+                  <xs:attribute name="EnglName" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="SWBICS">
+                <xs:complexType>
+                  <xs:attribute name="SWBIC" type="xs:string" use="required" />
+                  <xs:attribute name="DefaultSWBIC" type="xs:unsignedByte" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Accounts">
+                <xs:complexType mixed="true">
+                  <xs:sequence minOccurs="0">
+                    <xs:element maxOccurs="unbounded" name="AccRstrList">
+                      <xs:complexType>
+                        <xs:attribute name="AccRstr" type="xs:string" use="required" />
+                        <xs:attribute name="AccRstrDate" type="xs:date" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Account" type="xs:integer" use="required" />
+                  <xs:attribute name="RegulationAccountType" type="xs:string" use="required" />
+                  <xs:attribute name="CK" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="AccountCBRBIC" type="xs:unsignedInt" use="required" />
+                  <xs:attribute name="DateIn" type="xs:date" use="required" />
+                  <xs:attribute name="AccountStatus" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="BIC" type="xs:unsignedInt" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="EDNo" type="xs:unsignedInt" use="required" />
+      <xs:attribute name="EDDate" type="xs:date" use="required" />
+      <xs:attribute name="EDAuthor" type="xs:unsignedLong" use="required" />
+      <xs:attribute name="CreationReason" type="xs:string" use="required" />
+      <xs:attribute name="CreationDateTime" type="xs:dateTime" use="required" />
+      <xs:attribute name="InfoTypeCode" type="xs:string" use="required" />
+      <xs:attribute name="BusinessDay" type="xs:date" use="required" />
+      <xs:attribute name="DirectoryVersion" type="xs:unsignedByte" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

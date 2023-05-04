@@ -11,6 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="DataFiles\20230428_ED807_full.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DataFiles\cbr_ed807_v2023.4.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="DataFiles\test_data.xsd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
